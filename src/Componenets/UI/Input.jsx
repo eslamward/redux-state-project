@@ -9,7 +9,7 @@ const Input = () => {
     const dispatch = useDispatch()
     function handelAdd() {
         const title = inputRef.current
-        if (title !== "") {
+        if (title.value !== "") {
             dispatch(
                 todosAction.addTodo({
                     id: Math.random(),

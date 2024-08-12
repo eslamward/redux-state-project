@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux"
 import Button from "./UI/Button"
 import { todosAction } from "../store/todo_reducer"
+import { NavLink } from "react-router-dom"
 
 
 
@@ -27,9 +28,9 @@ const TodoItem = ({ todo }) => {
 
     return (
         <li className="flex gap-2 px-2 h-[40px]">
-            <p className={`flex-1 overflow-hidden hover:overflow-auto
+            <p className={`flex-1 overflow-hidden
                  ${todo.complete ? "line-through" : ""}`}>
-                {todo.title}
+                <NavLink to={`/todo/${todo.id}`}>   {todo.title}</NavLink>
             </p>
             <Button onClick={() => handelComplete(todo.id)} color="bg-green-600" hoverColor="bg-green-200">
                 Done</Button>
